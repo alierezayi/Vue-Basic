@@ -1,12 +1,15 @@
 <script setup>
-import VueFeather from "vue-feather";
 import Header from "./components/Header.vue";
 </script>
 
 <template>
-  <Header />
-  <div class="container mx-auto">
-  </div>
+  <div class="flex flex-col">
+    <Header />
 
-  <!-- <vue-feather type="activity" size="25" /> -->
+    <div class="px-4 md:px-6 my-10">
+      <div class="mx-auto max-w-screen-xl">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </template>
