@@ -1,9 +1,11 @@
 <script setup>
-import { ref } from "vue";
-
-const title = ref("Users Page");
+import UsersTable from "../components/UsersTable.vue";
 </script>
 
 <template>
-  {{ title }}
+  <div class="flex justify-center items-center flex-col">
+    <h1 class="text-xl font-semibold mb-5">Users Page</h1>
+
+    <UsersTable />
+  </div>
 </template>

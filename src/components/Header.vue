@@ -5,7 +5,7 @@ import { links } from "../utils/constant";
 
 <template>
   <header>
-    <nav class="bg-gray-100 px-4 md:px-6 py-4">
+    <nav class="bg-gray-50 px-4 md:px-6 py-4">
       <div
         class="flex flex-wrap justify-center md:justify-between items-center mx-auto max-w-screen-xl"
       >
