@@ -18,7 +18,6 @@ onMounted(() => {
 
   fetchData();
 });
-console.log(posts);
 </script>
 
 <template>
