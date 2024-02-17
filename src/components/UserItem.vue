@@ -1,17 +1,21 @@
 <script setup>
 const props = defineProps({
   user: Object,
+  index: Number,
 });
-const { name, username, email, phone, website } = props.user;
+const { id, name, username, email, phone, website } = props.user;
 </script>
 
 <template>
   <tr class="odd:bg-white even:bg-gray-50 border-b hover:bg-gray-100">
+    <td class="px-6 py-4">{{ index + 1 }}</td>
     <th
       scope="row"
       class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap underline"
     >
-      <router-link :to="`users/${username}`">{{ name }} " </router-link>
+      <router-link :to="{ name: 'userDetails', params: { id } }"
+        >{{ name }} "
+      </router-link>
     </th>
     <td class="px-6 py-4">
       {{ username }}
