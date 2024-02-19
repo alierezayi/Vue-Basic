@@ -34,3 +34,25 @@ export const getPostDetails = async (id) => {
     };
   }
 };
+export const createPost = async (data) => {
+  try {
+    const response = await axios.post(
+      `https://jsonplaceholder.typicode.com/posts`,
+      {
+        title: data.title,
+        body: data.body,
+        userId: 1,
+      }
+    );
+
+    return {
+      data: response,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      data: null,
+      error: error,
+    };
+  }
+};

@@ -7,11 +7,13 @@ const loading = ref(true);
 const errorMsg = ref(null);
 const post = ref(null);
 
-const { params } = useRoute();
+const {
+  params: { id },
+} = useRoute();
 
 onMounted(() => {
   const fetchData = async () => {
-    const { data, error } = await getPostDetails(params.id);
+    const { data, error } = await getPostDetails(id);
 
     post.value = data;
     errorMsg.value = error;
@@ -44,7 +46,7 @@ const deletePostAction = async () => {};
         </button>
         <button
           @click="deletePostAction"
-          class="px-3 py-2 text-sm font-medium text-center text-red-500 hover:text-white border border-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 w-20"
+          class="px-3 py-2 text-sm font-medium text-center text-red-500 border border-red-700 rounded-lg hover:bg-red-50 focus:ring-4 focus:outline-none focus:ring-red-300 w-20"
         >
           Delete
         </button>

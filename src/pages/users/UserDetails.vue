@@ -6,11 +6,12 @@ import { getUserDetails } from "../../api/userApi";
 const loading = ref(true);
 const errorMsg = ref(null);
 const user = ref(null);
-const { params } = useRoute();
-
+const {
+  params: { id },
+} = useRoute();
 onMounted(() => {
   const fetchData = async () => {
-    const { data, error } = await getUserDetails(params.id);
+    const { data, error } = await getUserDetails(id);
     console.log(data);
 
     user.value = data;
