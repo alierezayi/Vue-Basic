@@ -12,7 +12,6 @@ const {
 onMounted(() => {
   const fetchData = async () => {
     const { data, error } = await getUserDetails(id);
-    console.log(data);
 
     user.value = data;
     errorMsg.value = error;

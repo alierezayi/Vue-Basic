@@ -22,7 +22,7 @@ const routes = [
       { path: "", name: "posts", component: Posts },
       { path: ":id", name: "postDetails", component: PostDetails },
       { path: "create", name: "createPost", component: CreatePost },
-      { path: "edit/:id", name: "createPost", component: EditPost },
+      { path: "edit/:id", name: "editPost", component: EditPost },
     ],
   },
 ];
