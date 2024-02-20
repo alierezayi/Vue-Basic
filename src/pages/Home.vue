@@ -1,12 +1,12 @@
 <script setup>
-import { ref } from "vue";
+import { useRouter } from "vue-router";
 
-const title = ref("Home Page");
+const router = useRouter();
 </script>
 
 <template>
   <div class="flex flex-col items-center">
-    <h1 class="text-xl font-semibold mb-5">{{ title }}</h1>
+    <h1 class="text-xl font-semibold mb-5">Home Page</h1>
 
     <div class="w-full max-w-2xl mb-3">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita laborum
@@ -24,11 +24,13 @@ const title = ref("Home Page");
 
     <div class="flex gap-5">
       <button
+        @click="router.push('/users')"
         class="bg-gray-900 py-2 rounded-lg text-white hover:bg-gray-800 transition w-20"
       >
         Users
       </button>
       <button
+        @click="router.push('/posts')"
         class="bg-gray-100 py-2 rounded-lg hover:bg-gray-200 transition w-20"
       >
         Posts

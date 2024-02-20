@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { getPostDetails } from "../../api/postApi";
+import { deletePost, getPostDetails } from "../../api/postApi";
 
 const loading = ref(true);
 const errorMsg = ref(null);
@@ -25,7 +25,19 @@ onMounted(() => {
   fetchData();
 });
 
-const deletePostAction = async () => {};
+const deletePostAction = async () => {
+  loading.value = true;
+
+  const { data, error } = deletePost(id);
+  console.log(data);
+
+  errorMsg.value = error;
+  loading.value = false;
+
+  if (!error) {
+    router.push("/posts");
+  }
+};
 </script>
 
 <template>
