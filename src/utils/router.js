@@ -5,6 +5,7 @@ import Posts from "../pages/posts/index.vue";
 import UserDetails from "../pages/users/UserDetails.vue";
 import PostDetails from "../pages/posts/PostDetails.vue";
 import CreatePost from "../pages/posts/CreatePost.vue";
+import EditPost from "../pages/posts/EditPost.vue";
 
 const routes = [
   { path: "/", name: "home", component: Home },
@@ -21,6 +22,7 @@ const routes = [
       { path: "", name: "posts", component: Posts },
       { path: ":id", name: "postDetails", component: PostDetails },
       { path: "create", name: "createPost", component: CreatePost },
+      { path: "edit/:id", name: "createPost", component: EditPost },
     ],
   },
 ];

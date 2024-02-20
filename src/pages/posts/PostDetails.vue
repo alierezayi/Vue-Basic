@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { getPostDetails } from "../../api/postApi";
 
 const loading = ref(true);
@@ -10,6 +10,8 @@ const post = ref(null);
 const {
   params: { id },
 } = useRoute();
+
+const router = useRouter();
 
 onMounted(() => {
   const fetchData = async () => {
@@ -23,7 +25,6 @@ onMounted(() => {
   fetchData();
 });
 
-const editPostAction = async () => {};
 const deletePostAction = async () => {};
 </script>
 
@@ -39,7 +40,7 @@ const deletePostAction = async () => {};
       <p class="text-gray-700 mb-5">{{ post.body }}</p>
       <div class="flex gap-5">
         <button
-          @click="editPostAction"
+          @click="router.push(`/posts/edit/${id}`)"
           class="px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 w-20"
         >
           Edit

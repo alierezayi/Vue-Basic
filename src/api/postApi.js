@@ -38,15 +38,47 @@ export const createPost = async (data) => {
   try {
     const response = await axios.post(
       `https://jsonplaceholder.typicode.com/posts`,
-      {
-        title: data.title,
-        body: data.body,
-        userId: 1,
-      }
+      data
     );
 
     return {
-      data: response,
+      data: response.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      data: null,
+      error: error,
+    };
+  }
+};
+
+export const editPost = async (id, data) => {
+  try {
+    const response = await axios.put(
+      `https://jsonplaceholder.typicode.com/posts/${id}`,
+      data
+    );
+
+    return {
+      data: response.data,
+      error: null,
+    };
+  } catch (error) {
+    return {
+      data: null,
+      error: error,
+    };
+  }
+};
+export const deletePost = async (id) => {
+  try {
+    const response = await axios.delete(
+      `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+
+    return {
+      data: response.data,
       error: null,
     };
   } catch (error) {
